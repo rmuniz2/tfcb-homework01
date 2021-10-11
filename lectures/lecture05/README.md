@@ -11,9 +11,50 @@ After this course, you should:
 
 ## Class materials
 
-[A tour of Fred Hutch scientific computing resources video](https://www.youtube.com/watch?v=VkYdbQ0VoWU)
+I'll give a tour of the FH computational environment during class.
 
-## Reminders
+Here is an outline of the tour:
+
+* Welcome!
+    * Scicomp has put together a very nice system
+    * Be kind to sysadmins!
+* Not going to cover
+    * [motuz](https://sciwiki.fredhutch.org/compdemos/motuz/) file transfer
+    * [getting a graphical user interface session on the remote machines](https://sciwiki.fredhutch.org/scicomputing/access_nx/)
+    * Economy cloud storage
+    * Cloud computing
+* Lots of resources for you
+    * https://sciwiki.fredhutch.org/ (please contribute)
+    * http://www.fredhutch.io/
+    * https://fhbig.slack.com/
+* Interactive compute
+    * the rhinos (for non-intensive use)
+    * `grabnode`
+    * `top`, `htop`
+    * You need to use some strategy to avoid your jobs being killed when you close your laptop. [Options here](https://sciwiki.fredhutch.org/scicomputing/access_methods/#ssh-connections). [My notes on tmux](http://erick.matsen.org/2020/01/04/2nd-gen-interactive-shell.html).
+* Modules
+    * `ml SAMtools`
+    * `ml fhDev`
+    * [Available modules](https://sciwiki.fredhutch.org/scicomputing/compute_scientificSoftware/)
+* Your home directory
+    * Shared across every compute resource!
+    * 100GB
+    * `.snapshot`
+* Storage
+    * `/fh/fast`
+    * Scratch storage: `cp to-delete /fh/scratch/delete30/matsen_e/` (replace `matsen_e` with your PI's name once you have one)
+    * Economy cloud storage
+* gizmo cluster
+    * We use the [SLURM](https://slurm.schedmd.com/documentation.html) job scheduler
+    * `sbatch`
+    * `scancel`
+    * `squeue -u $USER`
+    * `tail -f slurm-output-file.out`
+    * `sacct` and variants, e.g. `sacct -u $USER -o JobID,JobName%30,Elapsed,State,MaxRSS,AllocCPUs,MaxVMsize`
+    * `hitparade`
+
+
+[Here is a recorded video](https://www.youtube.com/watch?v=VkYdbQ0VoWU) with some of the same content.
 
 
 ## Interactive work

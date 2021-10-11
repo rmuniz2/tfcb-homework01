@@ -2,10 +2,16 @@
 
 We ask you come prepared to class with a laptop on which you can participate in coding activities. Please follow the instructions below to install the required software for this course (all programs should come pre-installed on your computer, or are freely available for academic use). We'll use the other files in this directory to test the software together in class. The tools you'll need include:
 
+- [Git](#git) for GitHub commands
 - [WSL or Terminal](#unix-command-line) for Unix command line
 - [Anaconda](#python) for installing Python
 - [Conda Environment](#conda-environment) for installing R and R packages
 - [Text Editor](#text-editor) for file viewing / manipulation
+- [Passwordless Authentication](#pass-authentication-rhino) for Rhino
+
+## Git
+
+You can follow the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) to install Git. 
 
 ## Unix command line
 
@@ -22,6 +28,7 @@ Macintosh operating systems are built on Unix, so many of the tools you'll need 
 Please install Python using Anaconda, which includes Jupyter notebooks and most of the other packages we'll use for the course, according to the following instructions:
 - Download the [Anaconda](https://www.anaconda.com/download/) installer for Python 3.x for your particular operating system.
 - Double-click the downloaded file and follow the prompts to install Anaconda (default options are acceptable).
+- If you are using WSL, you may need to follow [these steps instead](https://gist.github.com/kauffmanes/5e74916617f9993bc3479f401dfec7da#steps-to-install-anaconda-on-windows-ubuntu-terminal) (especially if you are running into issues with conda within vscode terminal)
 
 ## Conda Environment
 
@@ -71,6 +78,40 @@ We will use the following features in VSCode as part of this class:
 8. Run the code block.
 9. You should see a scatter plot of hwy vs. displ.
 
+## Passwordless authentication for Rhino
+
+It can get annoying having to type your password everytime you ssh into rhino. With an SSH key, you won't have to enter your password anymore. To set this up:
+1. Open a Terminal window on your local computer and type `ssh-keygen`.
+2. When prompted with "Enter file in which to save the key (/Users/USERNAME/.ssh/id_rsa):", simply press `Enter` to save the key in the default location.
+3. Follow the prompt and enter a passphrase, which should be a longer complex password to ensure best protection of your key.
+4. Now, you should see that your public key has been saved. To copy your key to snail, type the command: `ssh-copy-id HUTCHID@snail.fhcrc.org`. To copy your key to rhino (via snail), type the command: `ssh-copy-id -o ProxyJump=HUTCHID@snail.fhcrc.org HUTCHID@rhino.fhcrc.org`. It should prompt you for your password.
+5. Lastly, modify your `~/.ssh/config`. To do this:
+  * Check that you have the Remote - SSH extension installed. If not, follow instructions [here](#text-editor) to install this extension.
+  * In VSCode, click View > Command Palette > Remote-SSH: Open SSH Configuration File...
+  * You should see a config file that looks like this:
+```
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host alias
+    HostName hostname
+    User user
+```
+  * Delete the text and copy/paste the text below into its place. Modify the "HUTCHID" parts to your Hutch username, and save.
+
+```
+Host snail
+    Hostname snail.fhcrc.org
+    User HUTCHID
+
+Host rhino
+    UseKeychain  yes
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_rsa
+    User HUTCHID
+    HostName rhino.fhcrc.org
+    ProxyCommand ssh HUTCHID@snail.fhcrc.org exec nc %h %p 2> /dev/null
+
+```
+6. Congratulations! Now, you should be able to ssh into rhino without typing your password each time using `ssh rhino`.
 <!---
 # Software installation
 

@@ -1,12 +1,9 @@
-# Homework 1: Unix shell
+# Homework 2: Unix shell
 
 This homework will assess your ability to run commands in the shell and make a simple script.
 
 Replace the lines specified in _italics_ with your answers and save as a text file.
 
-<!--
-The assignment is worth 100 points, is due on Thursday, November 7 at noon, and includes material from lectures 9 and 12. This assignment will be available in GitHub Classroom on Tuesday, November 5.
--->
 
 ## Problem 0
 

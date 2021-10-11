@@ -1,6 +1,6 @@
-# Homework 2
+# Homework 1
 
-This homework will assess your ability to use GitHub, organize projects, and apply tidy data principles, and represents content covered in lectures 4 and 5.
+This homework will assess your ability to use GitHub, organize projects, and apply tidy data principles, and represents content covered in lectures 1 and 2.
 
 ## Problem 1
 
@@ -16,11 +16,11 @@ _Include the link to your GitHub profile here._
 
 This question assesses your ability to track a project using Git.
 
-Download the course files with the following link: [github.com/fredhutch/tfcb_2021/archive/master.zip](https://github.com/fredhutch/tfcb_2021/archive/master.zip). Copy the contents of `homeworks/homework02/messy-project-directory/` to a new directory on your computer named `tfcb-homework02`.
+Download the course files with the following link: [github.com/FredHutch/tfcb_2021/archive/refs/heads/main.zip](https://github.com/FredHutch/tfcb_2021/archive/refs/heads/main.zip). Copy the contents of `homeworks/homework01/messy-project-directory/` to a new directory on your computer named `tfcb-homework01`.
 
-Open GitHub Desktop and make a "New repository" with name `tfcb-homework02`. Set "Local Path" to the location in your computer where your `tfcb-homework02` directory can be found.
+Open the above `tfcb-homework01` in VSCode and "Initialize Repository" in the Source Control Tab. 
 
-Create an initial commit that adds all the local files in `tfcb-homework02`:
+Create an initial commit that adds all the local files in `tfcb-homework01`:
 - `Survey Data.xlsx`
 - `get Species_list.py`
 - etc...
@@ -33,9 +33,18 @@ You do not need to submit anything for this problem; your success will be evalua
 
 This question assesses your ability to publish projects to GitHub.
 
-Publish `tfcb-homework02` to GitHub using GitHub Desktop. Make sure to set this to be a "public" repository. The resulting repository can now be accessed at github.com/{your_name}/tfcb-homework02. If necessary, you can make this repository public by going to "Settings" from this page.
+Create a new repository on GitHub called `tfcb-homework01`.
+Make sure to set this to be a "public" repository.
+The resulting repository can now be accessed at `github.com/{your_name}/tfcb-homework01`. 
+If necessary, you can make this repository public by going to "Settings" from this page.
 
-_Include the link to your `tfcb-homework02` GitHub repository here._
+Push the local `tfcb-homework01` to GitHub.
+Do this by picking `Push` from the `...` icon in the Source Control Tab of VSCode.
+The first time you try doing this, you will get an error asking you to configure your "Remote". 
+Use the URL of the GitHub repository you created above to configure the Remote.
+Now you should be able to push any further changes to your repository.
+
+_Include the link to your `tfcb-homework01` GitHub repository here._
 
 ## Problem 4
 
@@ -45,7 +54,7 @@ This question assesses your ability to organize files and directories associated
 
 Organize files into a more consistent structure. Group images into a `images/` directory. Separate source code and data. Rename files to remove spaces and improve consistency. Commit changes and publish to your public GitHub repository.
 
-_Include the link to your `tfcb-homework02` GitHub repository here._
+_Include the link to your `tfcb-homework01` GitHub repository here._
 
 ## Problem 5
 
